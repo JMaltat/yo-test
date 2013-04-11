@@ -1,0 +1,54 @@
+
+<form name="myForm" class="form-horizontal">
+	<fieldset>
+		<legend>{{personToEdit._id}}</legend>
+		<div class="control-group">
+			<label class="control-label">Nom :</label>
+			<div class="controls">
+				<input type="text" name="nom" ng-model="personToEdit.nom" required>
+				<span class="alert" ng-show="myForm.nom.$error.required">Required!</span>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label">Prenom :</label>
+			<div class="controls">
+				<input type="text" name="prenom" ng-model="personToEdit.prenom" required>
+			</div>
+		</div>
+
+		<div class="control-group">
+			<label class="control-label">Age :</label>
+			<div class="controls">
+				<input type="text" name="age" ng-model="personToEdit.age" required>
+			</div>
+		</div>
+		<address>
+			Adress :
+
+			<div class="control-group">
+				<label class="control-label">numero :</label>
+
+				<div class="controls">
+					<input type="text" name="adressNumero" ng-model="personToEdit.adress.numero" required>
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label">rue :</label>
+				<div class="controls">
+					<input type="text" name="adressRue" ng-model="personToEdit.adress.rue" required>
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label">quartier :</label>
+				<div class="controls">
+					<input type="text" name="adressQuartier" ng-model="personToEdit.adress.quartier" required>
+				</div>
+			</div>
+		</address>
+		<a href="" ng-click="savePerson()" class="btn btn-primary">Submit</a>
+		<input id="reset" type="reset" ng-click="goHome()" class="btn" value="Cancel"/>
+		
+	</fieldset>
+</form>

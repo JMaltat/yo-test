@@ -1,0 +1,28 @@
+<div class="row-fluid">
+	<div class="span10">
+		<form class="form-inline">
+			Search:
+			<input type="text" ng-model="query.nom" class="input-small" placeHolder="Nom"/>
+			<input type="text" ng-model="query.prenom" class="input-small"  placeHolder="Prénom"/>
+		</form>
+	</div>
+	<div class="span2">
+		<a href="" class="btn btn-primary pull-right" ng-click="create()">Create</a>
+	</div>
+
+	<table class="table table-hover table-bordered">
+		<thead>
+			<tr>
+				<th ng-repeat="tableHead in tableHeads"><a href="" ng-click="order(tableHead)" ng-class="{true : 'active', false: ''} [tableHead == orderProp]">{{tableHead}}</a></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="person in fullPersons | filter:query | orderBy:orderProp">
+				<td>{{person.nom}}</td>
+				<td>{{person.prenom}}</td>
+				<td>{{person.age}}</td>
+				<td><a href="" class="btn" ng-click="select(person)">Edit</a><a href="" class="btn" ng-click="del(person)"><i class="icon-trash">Delete</i></a></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
